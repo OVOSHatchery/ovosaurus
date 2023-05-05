@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../jurebes/.idea/jurebes.iml" filepath="$PROJECT_DIR$/../jurebes/.idea/jurebes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ovos-audio2ipa-plugin-allosaurus/.idea/ovos-audio2ipa-plugin-allosaurus.iml" filepath="$PROJECT_DIR$/../ovos-audio2ipa-plugin-allosaurus/.idea/ovos-audio2ipa-plugin-allosaurus.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ovos-classifiers/.idea/ovos-classifiers.iml" filepath="$PROJECT_DIR$/../ovos-classifiers/.idea/ovos-classifiers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ovos-plugin-manager/.idea/ovos-plugin-manager.iml" filepath="$PROJECT_DIR$/../ovos-plugin-manager/.idea/ovos-plugin-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ovos-stt-plugin-fasterwhisper/.idea/ovos-stt-plugin-fasterwhisper.iml" filepath="$PROJECT_DIR$/../ovos-stt-plugin-fasterwhisper/.idea/ovos-stt-plugin-fasterwhisper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ovos_audio_transformer_plugin_speechbrain_commonlanguage/.idea/ovos_audio_transformer_plugin_speechbrain_commonlanguage.iml" filepath="$PROJECT_DIR$/../ovos_audio_transformer_plugin_speechbrain_commonlanguage/.idea/ovos_audio_transformer_plugin_speechbrain_commonlanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ovosauro.iml" filepath="$PROJECT_DIR$/.idea/ovosauro.iml" />
     </modules>
   </component>
