@@ -63,9 +63,7 @@ sauro = AlloSaurus()
 langs = [l.split("_")[0] for l in os.listdir(VOXLINGUA)]
 
 random.shuffle(langs)
-for l in langs:
-    t = Trainer(sauro, feats_folder, [l], VOXLINGUA)
-    t.start()
 
+t = Trainer(sauro, feats_folder, langs, VOXLINGUA)
+t.run()
 
-wait_for_exit_signal()
