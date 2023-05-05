@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../jurebes/.idea/jurebes.iml" filepath="$PROJECT_DIR$/../jurebes/.idea/jurebes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ovos-classifiers/.idea/ovos-classifiers.iml" filepath="$PROJECT_DIR$/../ovos-classifiers/.idea/ovos-classifiers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ovos-stt-plugin-fasterwhisper/.idea/ovos-stt-plugin-fasterwhisper.iml" filepath="$PROJECT_DIR$/../ovos-stt-plugin-fasterwhisper/.idea/ovos-stt-plugin-fasterwhisper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ovosauro.iml" filepath="$PROJECT_DIR$/.idea/ovosauro.iml" />
+    </modules>
+  </component>
+</project>
