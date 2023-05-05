@@ -9,7 +9,7 @@ OVOSAURUS turns an audio classification problem into a text classification probl
 
 1 - turn audio into a sequence of IPA phonemes, initial implementation uses Allosaurus, this step is lang agnostic (240 different phonemes)
 
-2 - train a classic machine learning classifier on the phonemes
+2 - train a classic machine learning classifier on the phonemes (initial dataset [allosaurusVoxLingua_v0.1.csv](https://github.com/OpenVoiceOS/ovos-datasets/blob/master/text/allosaurusVoxLingua_v0.1.csv))
 
 
 TODO - make it independent from Allosaurus (GPL) , abstract audio2ipa under OPM
