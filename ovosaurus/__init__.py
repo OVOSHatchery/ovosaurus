@@ -2,10 +2,12 @@ import os
 import random
 from itertools import chain, combinations
 
+import requests
 from ovos_classifiers.skovos.classifier import SklearnOVOSClassifier, SklearnOVOSVotingClassifier
 from ovos_plugin_manager.audio2ipa import OVOSAudio2IPAFactory
 from sklearn.svm import SVC
 from speech_recognition import AudioData
+from ovos_utils.xdg_utils import xdg_data_home
 
 
 # TODO - move to ovos-utils
@@ -35,7 +37,8 @@ class OVOSaurus:
             self.sauro = AlloSaurus()
 
     def recognize(self, audio_data, unknown=False):
-        audio_data = AudioData(audio_data, 16000, 2)
+        if not isinstance(audio_data, AudioData):
+            audio_data = AudioData(audio_data, 16000, 2)
         feats = [self.sauro.recognize(audio_data)]
         classes = self.classifier.clf.classes_
         probs = self.classifier.clf.predict_proba(feats)[0]
@@ -97,6 +100,36 @@ class OVOSaurus:
 
     @staticmethod
     def from_file(path):
+        if path.startswith("http"):
+            p = f"{xdg_data_home()}/ovosaurus"
+            os.makedirs(p, exist_ok=True)
+            p = f"{p}/{path.split('/')[-1]}"
+            if not os.path.isfile(p):
+                data = requests.get(path).content
+                with open(p, "wb") as f:
+                    f.write(data)
+            path = p
         clf = OVOSaurus([])
         clf.load(path)
         return clf
+
+
+if __name__ == "__main__":
+    from os.path import dirname
+
+    from speech_recognition import Recognizer, AudioFile
+
+    name = "https://github.com/OpenVoiceOS/ovosaurus/raw/models/pretrained/svc_de_en_es_fi_fr_pt.pkl"
+    engine = OVOSaurus.from_file(name)
+
+    # inference
+    jfk = "/home/miro/PycharmProjects/ovos-stt-plugin-fasterwhisper/jfk.wav"
+    with AudioFile(jfk) as source:
+        audio = Recognizer().record(source)
+
+    pred = engine.recognize(audio)
+    print(pred)  # all langs
+    # [('de', 0.2966126259614516), ('en', 0.32389020726666456), ('es', 0.07285172650618475), ('fi', 0.09471670467904182), ('fr', 0.08266133731016057), ('pt', 0.12926739827649664)]
+    print(max(pred, key=lambda k: k[1]))  # best lang
+    # ('en', 0.32389020726666456)
+
