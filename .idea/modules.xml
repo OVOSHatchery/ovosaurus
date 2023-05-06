@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../jurebes/.idea/jurebes.iml" filepath="$PROJECT_DIR$/../jurebes/.idea/jurebes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ovos-audio-transformer-plugin-speechflow/.idea/ovos-audio-transformer-plugin-speechflow.iml" filepath="$PROJECT_DIR$/../ovos-audio-transformer-plugin-speechflow/.idea/ovos-audio-transformer-plugin-speechflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ovos-audio2ipa-plugin-allosaurus/.idea/ovos-audio2ipa-plugin-allosaurus.iml" filepath="$PROJECT_DIR$/../ovos-audio2ipa-plugin-allosaurus/.idea/ovos-audio2ipa-plugin-allosaurus.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ovos-classifiers/.idea/ovos-classifiers.iml" filepath="$PROJECT_DIR$/../ovos-classifiers/.idea/ovos-classifiers.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ovos-plugin-manager/.idea/ovos-plugin-manager.iml" filepath="$PROJECT_DIR$/../ovos-plugin-manager/.idea/ovos-plugin-manager.iml" />

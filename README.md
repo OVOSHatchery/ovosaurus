@@ -18,9 +18,9 @@ https://github.com/OpenVoiceOS/ovos-plugin-manager/pull/147
 
 initial plugins for testing:
 
-- https://huggingface.co/bookbot/wav2vec2-ljspeech-gruut
-- https://huggingface.co/facebook/wav2vec2-lv-60-espeak-cv-ft
-- https://github.com/xinjli/allosaurus/   (included here for now)
+- https://huggingface.co/bookbot/wav2vec2-ljspeech-gruut   (included in this repo for now)
+- https://huggingface.co/facebook/wav2vec2-lv-60-espeak-cv-ft   (included in this repo for now)
+- https://github.com/xinjli/allosaurus   (included in this repo for now)
 
 # OVOS usage
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../jurebes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ovos-audio-transformer-plugin-speechflow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ovos-classifiers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ovos-plugin-manager" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ovos-stt-plugin-fasterwhisper" vcs="Git" />

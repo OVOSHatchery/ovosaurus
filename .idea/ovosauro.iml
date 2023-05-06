@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="ovos-plugin-manager" />
     <orderEntry type="module" module-name="ovos-audio2ipa-plugin-allosaurus" />
     <orderEntry type="module" module-name="ovos_audio_transformer_plugin_speechbrain_commonlanguage" />
+    <orderEntry type="module" module-name="ovos-audio-transformer-plugin-speechflow" />
   </component>
 </module>
