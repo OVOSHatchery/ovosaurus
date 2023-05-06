@@ -33,8 +33,15 @@ class OVOSaurus:
         try:
             self.sauro = OVOSAudio2IPAFactory.create()
         except:
-            from ovosaurus.ovos_audio2ipa_plugin_allosaurus import AlloSaurus
-            self.sauro = AlloSaurus()
+            try:
+                from ovosaurus.ovos_audio2ipa_plugin_wav2vecgrut import Wav2VecGruut
+                self.sauro = Wav2VecGruut()
+            except:
+                try:
+                    from ovosaurus.ovos_audio2ipa_plugin_allosaurus import AlloSaurus
+                    self.sauro = AlloSaurus()
+                except:
+                    raise
 
     def recognize(self, audio_data, unknown=False):
         if not isinstance(audio_data, AudioData):
