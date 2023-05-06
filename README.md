@@ -1,26 +1,21 @@
 # OVOSAURUS
 
-:WIP: - just a fun idea, open during construction, might lead nowhere
-
+*WIP* - just a fun idea, open during construction, might lead nowhere
 
 classify language from spoken audio
 
 OVOSAURUS turns an audio classification problem into a text classification problem, allowing for new models to be quickly trained on limited data for different language combinations on demand
 
-1 - turn audio into a sequence of IPA phonemes, initial implementation uses Allosaurus, this step is lang agnostic (240 different phonemes)
+1 - turn audio into a sequence of IPA phonemes, this step should be lang agnostic
 
 2 - train a classic machine learning classifier on the phonemes (initial dataset [allosaurusVoxLingua_v0.1.csv](https://github.com/OpenVoiceOS/ovos-datasets/blob/master/text/allosaurusVoxLingua_v0.1.csv))
 
 
-TODO - make it independent from Allosaurus (GPL) , abstract audio2ipa under OPM
+supported phonemizers:
 
-https://github.com/OpenVoiceOS/ovos-plugin-manager/pull/147
-
-initial plugins for testing:
-
-- https://huggingface.co/bookbot/wav2vec2-ljspeech-gruut   (included in this repo for now)
-- https://huggingface.co/facebook/wav2vec2-lv-60-espeak-cv-ft   (included in this repo for now)
-- https://github.com/xinjli/allosaurus   (included in this repo for now)
+- https://github.com/OpenVoiceOS/ovos-audio2ipa-plugin-allosaurus
+- https://github.com/OpenVoiceOS/ovos-audio2ipa-plugin-wav2vec2gruut  (default)
+- https://github.com/OpenVoiceOS/ovos-audio2ipa-plugin-wav2vec2espeak
 
 # OVOS usage
 
@@ -30,6 +25,7 @@ see [models branch for pretrained models](https://github.com/OpenVoiceOS/ovosaur
 
 
 ```javascript
+"audio2ipa": {"module": "ovos-audio2ipa-plugin-wav2vec2gruut"},
 "listener": {
     "audio_transformers": {
         "ovos-audio-transformer-plugin-ovosaurus": {

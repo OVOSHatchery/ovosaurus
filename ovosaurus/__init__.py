@@ -8,6 +8,8 @@ from ovos_plugin_manager.audio2ipa import OVOSAudio2IPAFactory
 from sklearn.svm import SVC
 from speech_recognition import AudioData
 from ovos_utils.xdg_utils import xdg_data_home
+from ovos_utils.log import LOG
+from ovos_config import Configuration
 
 
 # TODO - move to ovos-utils
@@ -28,24 +30,9 @@ class OVOSaurus:
             self.classifier = SklearnOVOSClassifier(pipeline_id=pipeline, pipeline_clf=clf)
 
         self.lang_features = {}
-
-        # TODO - plugins
-        try:
-            self.sauro = OVOSAudio2IPAFactory.create()
-        except:
-            try:
-                from ovosaurus.ovos_audio2ipa_plugin_wav2vecgrut import Wav2VecGruut
-                self.sauro = Wav2VecGruut()
-            except:
-                try:
-                    from ovosaurus.ovos_audio2ipa_plugin_wav2vecespeak import Wav2VecEspeak
-                    self.sauro = Wav2VecEspeak()
-                except:
-                    try:
-                        from ovosaurus.ovos_audio2ipa_plugin_allosaurus import AlloSaurus
-                        self.sauro = AlloSaurus()
-                    except:
-                        raise
+        cfg = Configuration().get("audio2ipa", {}) or {"module": "ovos-audio2ipa-plugin-wav2vec2gruut"}
+        self.sauro = OVOSAudio2IPAFactory.create(cfg)
+        LOG.info(f"Audio2IPA: {self.sauro.__class__.__name__}")
 
     def recognize(self, audio_data, unknown=False):
         if not isinstance(audio_data, AudioData):
@@ -77,12 +64,11 @@ class OVOSaurus:
                     # print("loaded ", featfile)
                     except:
                         continue
-        print("loaded feats")
 
     def train(self, X, y):
         self.classifier.train(X, y)
 
-    def load_data(self, unknown=True):
+    def get_data(self, unknown=True):
         data = []
         for lang, featlist in self.lang_features.items():
             if lang not in self.langs and not unknown:
